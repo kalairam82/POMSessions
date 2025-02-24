@@ -12,6 +12,10 @@ import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.constants.AppError;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+
 
 public class HomePageTest extends BaseTest 
 {
@@ -21,6 +25,9 @@ public class HomePageTest extends BaseTest
 	  homepage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 	
   }
+  
+  @Description("Checking Homepage title") 
+  @Severity(SeverityLevel.MINOR)
   @Test
   public void homePageTitleTest()
   {
@@ -29,6 +36,8 @@ public class HomePageTest extends BaseTest
 	 ChainTestListener.log("The Home page title is:" +title); 
 	 Assert.assertEquals(title, AppConstants.HOME_PAGE_TTILE, AppError.TITLE_NOT_FOUND_ERROR);
   }
+  @Description("Checking HomePage URL ") 
+  @Severity(SeverityLevel.MINOR)
   @Test
   public void homePageUrlTest()
   {
