@@ -3,18 +3,24 @@ package com.qa.opencart.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.util.ElementUtil;
+
+import io.qameta.allure.Step;
 
 public class Homepage {
 	
 	private WebDriver driver;
 	private ElementUtil eleUtil;
+	  private static final Logger log = LogManager.getLogger(DriverFactory.class);
 	public Homepage(WebDriver driver)
 	{
 		this.driver = driver;
@@ -27,15 +33,17 @@ public class Homepage {
    By searchbutton = By.cssSelector("div#search button");
    By myaccount=By.linkText("My Account");
    By dropdown = By.xpath("//li[@class='dropdown open']/ul/li");
+   @Step("getHomePageTitle")
    public String getHomePageTitle()
    {
 	   //String title = driver.getTitle();
 	   String title = eleUtil.waitForTitleIs(AppConstants.HOME_PAGE_TTILE, AppConstants.DEFAULT_TIME_OUT);
 	   ChainTestListener.log("The Home page title is:" +title);
-	   System.out.println(title);
+	   log.info("The HomePage title is: " +title);
+	   //System.out.println(title);
 	   return title;
    }
-   
+   @Step("getHomePageURL")
    public String getHomePageURL()
    {
 	   //String url = driver.getCurrentUrl();

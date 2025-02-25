@@ -31,7 +31,7 @@ public class HomePageTest extends BaseTest
   @Test
   public void homePageTitleTest()
   {
-	 ChainTestListener.log("Login page title test"); 
+	 ChainTestListener.log("Home page title test"); 
 	 String title =  homepage.getHomePageTitle();
 	 ChainTestListener.log("The Home page title is:" +title); 
 	 Assert.assertEquals(title, AppConstants.HOME_PAGE_TTILE, AppError.TITLE_NOT_FOUND_ERROR);
@@ -41,9 +41,9 @@ public class HomePageTest extends BaseTest
   @Test
   public void homePageUrlTest()
   {
-	  ChainTestListener.log("Login page URL test");
+	  ChainTestListener.log("Home page URL test");
 	  String url = homepage.getHomePageURL();
-	  ChainTestListener.log("Login page URL test" +url);
+	  ChainTestListener.log("Home page URL test" +url);
 	  Assert.assertTrue(homepage.getHomePageURL().contains(AppConstants.HOME_PAGE_URL_FRACTION),AppError.URL_NOT_FOUND_ERROR);
   }
   @Test
