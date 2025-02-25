@@ -38,7 +38,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/kalairam82/POMSessions'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunner/testng_regression.xml"
+                    bat 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunner/testng_regression.xml'
                     
                 }
             }
@@ -82,7 +82,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/kalairam82/POMSessions'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunner/testng_sanity.xml"
+                    bat 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunner/testng_sanity.xml'
                     
                 }
             }
