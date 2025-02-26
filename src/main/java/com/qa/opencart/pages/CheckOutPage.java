@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.util.ElementUtil;
 
+import io.qameta.allure.Step;
+
 public class CheckOutPage {
 	    private WebDriver driver;	
 		private ElementUtil eleUtil;
@@ -18,6 +20,7 @@ public class CheckOutPage {
 		By addressoption1 =By.xpath("(//div/label)[1]");
 		By addressoption2 = By.xpath("(//div/label)[1]");
 		
+		@Step("getCheckoutPageURL")
 		public String getCheckoutPageURL()
 		{
 			String pageurl = eleUtil.waitForURLContains(AppConstants.CHECKOUT_PAGE_URL_FRACTION, AppConstants.DEFAULT_TIME_OUT);
