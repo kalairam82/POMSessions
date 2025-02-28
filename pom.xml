@@ -57,6 +57,11 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>Sep2024SeleniumSessions</groupId>
+			<artifactId>Sep2024SeleniumSessions</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   </dependencies>
 
   <build>
