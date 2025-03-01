@@ -38,9 +38,9 @@ public class BaseTest {
 	protected CheckOutPage checkoutpage;
 	protected CommonsPage commonspage;
 	
-	@Parameters({"browser","browserversion"})
+	@Parameters({"browser","browserversion","testname"})
 	@BeforeTest(description = "setup: intialize driver and properties")
-	    public void setUp(String browserName,String browserVersion)
+	    public void setUp(String browserName,String browserVersion,String testName)
 	    {
 	    	df = new DriverFactory();
 	    	prop = df.initProp();
@@ -48,6 +48,7 @@ public class BaseTest {
 	    	   {
 	    		   prop.setProperty("browser", browserName);
 	    		   prop.setProperty("browserversion",browserVersion);
+	    		   prop.setProperty("testname", testName);
 	    	   }
 	    	driver = df.initDriver(prop);
 	    	loginpage = new LoginPage(driver);
