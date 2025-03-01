@@ -39,6 +39,7 @@ public class OptionsManager {
 	    	  if(Boolean.parseBoolean(prop.getProperty("remote")))
 	    	  {
 	    		  co.setCapability("browserName","chrome");
+	    		  co.setBrowserVersion(prop.getProperty("browserversion").trim());
 	    	  }
 	    	  return co;
 	      }
@@ -61,6 +62,7 @@ public class OptionsManager {
 	    	  if(Boolean.parseBoolean(prop.getProperty("remote")))
 	    	  {
 	    		  fo.setCapability("browserName","firefox");
+	    		  fo.setBrowserVersion(prop.getProperty("browserversion").trim());
 	    	  }
 	    	  return fo;
 	      }
@@ -83,6 +85,7 @@ public class OptionsManager {
 	    	  if(Boolean.parseBoolean(prop.getProperty("remote")))
 	    	  {
 	    		  eo.setCapability("browserName","edge");
+	    		  
 	    	  }
 	    	  return eo;
 	      }
