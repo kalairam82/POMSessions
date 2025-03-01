@@ -56,13 +56,7 @@
 			<version>2.24.3</version>
 		</dependency>
 
-
-		<!-- <dependency>
-			<groupId>Sep2024SeleniumSessions</groupId>
-			<artifactId>Sep2024SeleniumSessions</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>-->
-  </dependencies>
+	   </dependencies>
 
   <build>
   
@@ -88,8 +82,8 @@
 					<forkCount>3</forkCount>
 					<reuseForks>true</reuseForks>
 					<suiteXmlFiles>
-					<suiteXmlFile>src/test/resources/testRunner/testng_regression.xml</suiteXmlFile> 
-					<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>  -->
+					<!-- <suiteXmlFile>src/test/resources/testRunner/testng_regression.xml</suiteXmlFile> -->
+					 <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>  
 					</suiteXmlFiles>
                <argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
